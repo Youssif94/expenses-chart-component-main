@@ -1,5 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 body{
     background-color: hsl(27, 66%, 92%);
+    font-family: 'Ubuntu', sans-serif;
 }
 *{margin: 0;pad: 0;}
 .container{
@@ -7,7 +11,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 85%;
+    width: 55%;
     height: 100vh;
     margin: 0 auto;
 }
@@ -48,6 +52,12 @@ hr{
 .sub{
     color: grey;
 }
+
+.title{
+    color: hsl(25, 47%, 15%);
+}
+
 #myChart{
-    width:100%;max-width:700px
+    width:100%;
+    /* max-width:700px; */
 }

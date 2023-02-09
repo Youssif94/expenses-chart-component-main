@@ -6,7 +6,7 @@ let xValues = [];
 let yValues = [];
 var barColors = ["hsl(10, 79%, 65%)"];
 
-function getData(cb){
+function getData(makeChart){
     fetch('./data.json')
     .then(res=>{
        res.json()
@@ -16,7 +16,7 @@ function getData(cb){
         xValues.push(obj.day)
         yValues.push(obj.amount)
         })
-        cb()
+        makeChart()
    })
    })
    
@@ -24,7 +24,6 @@ function getData(cb){
 
 
 function makeChart(){
-    
     var myChart = new Chart("myChart", {
         type: "bar",
         data: {
@@ -35,8 +34,37 @@ function makeChart(){
             }]
         },
         options: {
-        display:false
-    }
+            borderRadius: 10,
+            inflateAmount: 1,
+            hoverBackgroundColor: 'rgba(53,172,206,255)',
+            plugins: {
+                legend : false,
+                tooltip:{
+                    padding: 50
+                }
+            },
+
+            scales: {
+                x:{
+                    grid: {
+                    drawOnChartArea: false,
+                    drawTicks:false,
+                    },
+
+               },
+               y: {
+                grid: {
+                    drawOnChartArea: false,
+                    drawTicks:false,
+
+                },
+                ticks:{
+                    display: false
+                }
+               }
+            }
+            
+        },
 });
 }
 
