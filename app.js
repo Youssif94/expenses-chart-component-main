@@ -40,7 +40,8 @@ function makeChart(){
             plugins: {
                 legend : false,
                 tooltip:{
-                    padding: 50
+                    xAlign: 'center',
+                    yAlign: 'top'
                 }
             },
 
